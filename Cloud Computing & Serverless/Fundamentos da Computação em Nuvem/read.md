@@ -28,8 +28,6 @@ Modulo 1: Fundamentos da Computação em Nuvem
 	 - Cenários de negócios comuns de IaaS
 	 - Vantagens da IaaS
 
-
-	
 	> PaaS
 	- Cenário PaaS comuns
 	- Vantagens da PaaS
