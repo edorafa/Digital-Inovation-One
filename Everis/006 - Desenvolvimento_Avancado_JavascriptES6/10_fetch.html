@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+//Fetch só vai dar erro caso acontece um erro de rede
+//caso aconteça um status diferente de 200
+
+fetch('data.json')
+  .then(responseSTrem => {
+    if (responseSTrem.status === 200) {
+      return responseSTrem.json();
+    } else {
+      throw new Error('Request error');
+    }
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(err => {
+    console.log('Erro ', err);
+  });
+      
+    </script>
+  
+</body>
+</html>

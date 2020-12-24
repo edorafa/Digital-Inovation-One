@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+const asyncTimer = () => new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        resolve(12345);
+    }, 1000);
+});
+
+const simpleFunc4 = async () => {
+    const data = await asyncTimer();
+    console.log(data);
+    const dataJSON = await fetch('/data.json').then(resStream =>
+        resStream.json()
+    );
+    return dataJSON;
+};
+
+simpleFunc4()
+.then(data => {
+    console.log(data);
+}).catch(err => {
+    console.log(err);
+});
+
+</script>
+
+</body>
+</html>
